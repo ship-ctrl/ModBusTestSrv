@@ -3,13 +3,13 @@
 
 #include <string>
 
-#define PROJECT_NAME "GenericProject"
+#define PROJECT_NAME "ModbusTestSrv"
 
 #define MAJOR_VERSION = 0
 #define MINOR_VERSION = 0
-#define BUILD_NUMBER  = 2
+#define BUILD_NUMBER  = 22
 
-#define VERSION_STRING = "0.0.2"
+#define VERSION_STRING = "0.0.22"
 #define BUILD_DATE = __DATE__
 #define BUILD_TIME = __TIME__
 

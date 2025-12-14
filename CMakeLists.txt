@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22) # feel free to downgrade on build errors but it's better be 3.22
-project(GenericProject VERSION 0.01.001)
+project(ModbusTestSrv VERSION 0.1 DESCRIPTION "A CMake driven tests 4 LL code" LANGUAGES CXX C HOMEPAGE_URL "https://github.com/ship-ctrl/ModBusTestSrv")
 
 cmake_policy(SET CMP0156 NEW) #deduplicate lib
 cmake_policy(SET CMP0179 NEW) #use first occurrence
@@ -119,7 +119,7 @@ endif(Enable_Licensing)
 #list(APPEND Mbus_INCLUDES "alphafilter.hpp")
 
 if(NOT TESTONLY)
-    add_executable(example src/main.cxx ${Mbus_INCLUDES} ${YAML_CPP_LIBRARIES} ${EXTRA_INCLUDES})
+    add_executable(example src/example.cxx ${Mbus_INCLUDES} ${YAML_CPP_LIBRARIES} ${EXTRA_INCLUDES})
     target_link_libraries( example
         glog::glog 
         gflags
@@ -127,6 +127,21 @@ if(NOT TESTONLY)
         ${licLib} 
         ${catkin_LIBRARIES}
     )
+
+    add_library(libDumbMserver 
+        src/DumbMlib.cxx
+        src/DumbModbus.hpp
+        ${EXTRA_INCLUDES}
+        )
+
+    add_executable(DumbMserver 
+        src/DumbMsrv.cxx
+        src/DumbModbus.hpp
+        ${EXTRA_INCLUDES}
+        )
+
+target_link_libraries(libDumbMserver PUBLIC libmodbus.so)
+target_link_libraries(DumbMserver PUBLIC libmodbus.so)
 
     # Add post-build command to the target
     add_custom_command(TARGET example POST_BUILD
