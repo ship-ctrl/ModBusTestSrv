@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"  # or weekly, monthly
+    reviewers:
+      - "ship-ctrl"
+    assignees:
+      - "ship-ctrl"
+    labels:
+      - "dependencies"
+      - "gitsubmodule"
+    #ignore:
+    #  - dependency-name: "package-name"
+    #    versions: ["1.x", "2.x"]
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    rebase-strategy: "auto"
+    versioning-strategy: "increase-if-necessary"
