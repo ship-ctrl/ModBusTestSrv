@@ -1,0 +1,45 @@
+{
+    "submodules": [
+        {
+            "name": "glog",
+            "url": "https://github.com/google/glog.git",
+            "build_system": "cmake",
+            "directory": "glog",
+            "build_options": {
+                "cmake_options": [
+                    "WITH_GFLAGS=OFF",
+                    "WITH_UNWIND=ON"
+                ]
+            }
+        },
+        {
+            "name": "libmodbus",
+            "url": "https://github.com/stephane/libmodbus.git",
+            "build_system": "autoconf",
+            "directory": "libmodbus",
+            "build_options": {
+                "autoconf_options": [
+                    "enable-shared",
+                    "disable-static"
+                ]
+            }
+        },
+        {
+            "name": "jsoncpp",
+            "url": "https://github.com/open-source-parsers/jsoncpp.git",
+            "build_system": "cmake",
+            "directory": "json"
+        },
+        {
+            "name": "simple_make_lib",
+            "url": "https://github.com/example/simple_make_lib.git",
+            "build_system": "make",
+            "build_options": {
+                "make_options": {
+                    "CC": "gcc",
+                    "CFLAGS": "-O2"
+                }
+            }
+        }
+    ]
+}
