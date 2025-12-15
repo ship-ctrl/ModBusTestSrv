@@ -131,6 +131,7 @@ if(NOT TESTONLY)
     add_library(libDumbMserver 
         src/DumbMlib.cxx
         src/DumbModbus.hpp
+        
         ${EXTRA_INCLUDES}
         )
 
@@ -141,7 +142,7 @@ if(NOT TESTONLY)
         )
 
 target_link_libraries(libDumbMserver PUBLIC libmodbus.so)
-target_link_libraries(DumbMserver PUBLIC libmodbus.so)
+target_link_libraries(DumbMserver PUBLIC libmodbus.so glog::glog gflags)
 
     # Add post-build command to the target
     add_custom_command(TARGET example POST_BUILD

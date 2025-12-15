@@ -7,9 +7,9 @@
 
 #define MAJOR_VERSION = 0
 #define MINOR_VERSION = 0
-#define BUILD_NUMBER  = 22
+#define BUILD_NUMBER  = 33
 
-#define VERSION_STRING = "0.0.22"
+#define VERSION_STRING = "0.0.33"
 #define BUILD_DATE = __DATE__
 #define BUILD_TIME = __TIME__
 
