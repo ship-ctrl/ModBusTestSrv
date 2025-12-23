@@ -104,7 +104,7 @@ include_directories(
   #${catkin_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIR}
   /usr/include
-  #/usr/include/modbus
+  /usr/include/modbus
 )
 if(Enable_Licensing)
     add_subdirectory(Silencer_CLASS) # make it git and auto downloadble
@@ -119,7 +119,13 @@ endif(Enable_Licensing)
 #list(APPEND Mbus_INCLUDES "alphafilter.hpp")
 
 if(NOT TESTONLY)
-    add_executable(example src/example.cxx ${Mbus_INCLUDES} ${YAML_CPP_LIBRARIES} ${EXTRA_INCLUDES})
+    add_executable(example 
+        ./src/example.cxx 
+        ${Mbus_INCLUDES} 
+        ${YAML_CPP_LIBRARIES} 
+        ${EXTRA_INCLUDES}
+        )
+
     target_link_libraries( example
         glog::glog 
         gflags
@@ -129,8 +135,8 @@ if(NOT TESTONLY)
     )
 
     add_library(libDumbMserver 
-        src/DumbMlib.cxx
-        src/DumbModbus.hpp
+        ./src/DumbMlib.cxx
+        ./src/DumbModbus.hpp
         
         ${EXTRA_INCLUDES}
         )

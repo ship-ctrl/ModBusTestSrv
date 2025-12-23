@@ -4,8 +4,8 @@
 //#include <boost/test/unit_test.hpp>
 
 
-#include "DataBucket.hpp"
-#include "DumbModbus.hpp"
+#include "src/DataBucket.hpp"
+#include "src/DumbModbus.hpp"
 
 BOOST_AUTO_TEST_SUITE(LL_Tests)
 
