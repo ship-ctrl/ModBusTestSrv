@@ -6,10 +6,10 @@
 #define PROJECT_NAME "ModbusTestSrv"
 
 #define MAJOR_VERSION = 0
-#define MINOR_VERSION = 0
-#define BUILD_NUMBER  = 33
+#define MINOR_VERSION = 1
+#define BUILD_NUMBER  = 56
 
-#define VERSION_STRING = "0.0.33"
+#define VERSION_STRING = "0.1.56"
 #define BUILD_DATE = __DATE__
 #define BUILD_TIME = __TIME__
 
